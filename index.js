@@ -49,17 +49,18 @@ async function gen_png(ordinals) {
 async function build_collection(ordinals) {
 	let ma = []
 	console.log('ordinals', ordinals.length)
+	let number = 1
 	for (const ordinal of ordinals) {
 		// magic eden
 		const magic_eden = {
 			id: ordinal.id,
 			meta: {
-				name: `XEX #${ordinal.number}`,
+				name: `Xexadon #${number++}`,
 				high_res_img_url: `https://ordinals.xexlabs.com/images/${ordinal.id}.png`,
 				attributes: [
 					{
 						trait_type: 'Rarity',
-						value: ordinal.sat_rarity
+						value: 'Mythic'
 					}
 				]
 			}
