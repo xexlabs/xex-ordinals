@@ -1,0 +1,14 @@
+{
+	"name": "originals",
+	"version": "1.0.8",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"sharp": "^0.31.3"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"test": "nodemon --ext js --exec npm start",
+		"pretest": "npm version patch --no-git-tag-version"
+	}
+}
