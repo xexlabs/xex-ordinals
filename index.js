@@ -56,6 +56,7 @@ async function build_collection(ordinals) {
 			id: ordinal.id,
 			meta: {
 				name: `Xexadon #${number++}`,
+				number: ordinal.number,
 				high_res_img_url: `https://ordinals.xexlabs.com/images/${ordinal.id}.png`,
 				attributes: [
 					{
@@ -67,6 +68,8 @@ async function build_collection(ordinals) {
 		}
 		ma.push(magic_eden)
 	}
+	// sort ma by number asc now:
+	ma.sort((a, b) => a.meta.number - b.meta.number)
 	fs.writeFileSync('magic-eden.json', JSON.stringify(ma, undefined, 4))
 }
 
