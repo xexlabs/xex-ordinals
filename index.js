@@ -50,6 +50,7 @@ async function build_collection(ordinals) {
 	let ma = []
 	console.log('ordinals', ordinals.length)
 	let number = 1
+	ordinals.sort((a, b) => a.number - b.number)
 	for (const ordinal of ordinals) {
 		// magic eden
 		const magic_eden = {
@@ -68,8 +69,7 @@ async function build_collection(ordinals) {
 		}
 		ma.push(magic_eden)
 	}
-	// sort ma by number asc now:
-	ma.sort((a, b) => a.meta.number - b.meta.number)
+
 	fs.writeFileSync('magic-eden.json', JSON.stringify(ma, undefined, 4))
 }
 
