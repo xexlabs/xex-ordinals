@@ -2,7 +2,9 @@ const crypto = require('crypto')
 const fs = require('fs')
 const axios = require('axios')
 let cache = {}
-const hiro_api = 'bf66510cb185f63ca232fad82b5347c4'
+const dotenv = require('dotenv')
+dotenv.config()
+const hiro_api = process.env.HIRO
 async function app() {
 	const list = JSON.parse(fs.readFileSync('inscriptions.json', 'utf8'))
 	let i = 0,
